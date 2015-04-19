@@ -16,3 +16,6 @@ class MovieItem(scrapy.Item):
 	place = scrapy.Field()
 	genres = scrapy.Field()
 	actors = scrapy.Field()
+
+class GenreItem(scrapy.Item):
+	genre = scrapy.Field()
