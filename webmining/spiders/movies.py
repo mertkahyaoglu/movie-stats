@@ -29,9 +29,5 @@ class MoviesSpider(scrapy.Spider):
         item['director'] = response.css("div[itemprop=director] a span::text").extract()[0]
         item['place'] = response.css("div#titleAwardsRanks a strong::text").extract()[0].split('#')[1]
         item['genres'] = response.css("div.infobar span[itemprop=genre]::text").extract()
-        cast_url = "http://www.imdb.com/title/%s/fullcredits"
-        yield Request(cast_url % item['imdbid'], self.parse_cast, meta={'item': item})
-
-    def parse_cast(self, response):
-        item = response.meta["item"]
-        print item['place']
+        item['cast'] = response.css("table.cast_list tr td[itemprop=actor] a span::text").extract()
+        return item

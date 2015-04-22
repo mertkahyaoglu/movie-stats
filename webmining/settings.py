@@ -13,5 +13,9 @@ BOT_NAME = 'webmining'
 SPIDER_MODULES = ['webmining.spiders']
 NEWSPIDER_MODULE = 'webmining.spiders'
 
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'webmining (+http://www.yourdomain.com)'
+ITEM_PIPELINES = {
+    'webmining.pipelines.MoviesPipeline': 100
+}
+
+DOWNLOAD_DELAY = 1
+HTTPCACHE_ENABLED = True

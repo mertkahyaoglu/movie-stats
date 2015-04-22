@@ -1,1 +1,4 @@
 *.pyc
+.scrapy
+.DS_Store
+movies.jl
