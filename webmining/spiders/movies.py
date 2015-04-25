@@ -30,4 +30,6 @@ class MoviesSpider(scrapy.Spider):
         item['place'] = response.css("div#titleAwardsRanks a strong::text").extract()[0].split('#')[1]
         item['genres'] = response.css("div.infobar span[itemprop=genre]::text").extract()
         item['cast'] = response.css("table.cast_list tr td[itemprop=actor] a span::text").extract()
+        item['poster'] = response.css("div.image img[itemprop=image]::attr(src)").extract()[0]
+        item['plot'] = response.css("p[itemprop=description]::text").extract()[0]
         return item

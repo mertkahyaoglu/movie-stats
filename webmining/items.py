@@ -16,3 +16,5 @@ class MovieItem(scrapy.Item):
 	place = scrapy.Field()
 	genres = scrapy.Field()
 	cast = scrapy.Field()
+	poster = scrapy.Field()
+	plot = scrapy.Field()
