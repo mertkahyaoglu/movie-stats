@@ -1,0 +1,27 @@
+{
+  "name": "movie-stats",
+  "version": "1.0.0",
+  "description": "Movie Statistics of Top 250",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mertkahyaoglu/movie-stats"
+  },
+  "author": "Mert Kahyaoğlu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mertkahyaoglu/movie-stats/issues"
+  },
+  "homepage": "https://github.com/mertkahyaoglu/movie-stats",
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-rimraf": "^0.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {}
+}

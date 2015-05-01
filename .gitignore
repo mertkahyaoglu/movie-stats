@@ -1,4 +1,5 @@
 *.pyc
 .scrapy
 .DS_Store
-movies.jl
+node_modules
+vendors
