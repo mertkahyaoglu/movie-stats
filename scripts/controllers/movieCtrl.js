@@ -27,7 +27,7 @@ angular.module('App').controller('movieCtrl', function($scope, movieService, $ro
 						  }
 						},
 						title: {
-						    text: 'User Ratings of ' + movie['title']
+						    text: 'Ratings of ' + movie['title'] + " ("+movie['rating']+")"
 						},
 						credits: {
 						    enabled: false
@@ -40,11 +40,11 @@ angular.module('App').controller('movieCtrl', function($scope, movieService, $ro
             },
             yAxis: {
                 title: {
-                    text: ''
+                    text: 'Votes'
                 }
             },
 						series: [{
-						    name: 'Votes',
+						    name: 'User Votes',
 						    data: votes,
                 color: '#00bfa5'
 						}]
