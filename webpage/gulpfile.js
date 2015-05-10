@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect');
 
 var paths = {
-  js: ['./scripts/main.js'],
+  js: ['./scripts/**/*.js'],
   css: ['./styles/main.css'],
   html: ['./index.html', './views/*.html']
 }

@@ -13,9 +13,10 @@ class MoviesSpider(scrapy.Spider):
 
     def parse(self, response):
         movie_links = response.css("tbody.lister-list tr td.titleColumn a::attr(href)").extract()
-        base_comment_url = "http://www.imdb.com/%s"
+        base_url = "http://www.imdb.com/%s"
         for link in movie_links:
-            yield Request(base_comment_url % link, self.parse_movie)
+            yield Request(base_url % link, self.parse_movie)
+
     def parse_movie(self, response):
         item = items.MovieItem()
         url = response.url
@@ -29,4 +30,13 @@ class MoviesSpider(scrapy.Spider):
         item['cast'] = response.css("table.cast_list tr td[itemprop=actor] a span::text").extract()
         item['poster'] = response.css("div.image img[itemprop=image]::attr(src)").extract()[0]
         item['plot'] = response.css("p[itemprop=description]::text").extract()[0]
+
+        rating = response.css(".star-box-details a::attr(href)").extract()[0]
+        rating_url = "http://www.imdb.com/title/" + item['imdbid'] + "/" + rating
+        yield Request(rating_url, self.parse_ratings, meta={'item': item})
+
+    def parse_ratings(self, response):
+        item = response.meta["item"]
+        rating_table = response.css("div#tn15content :nth-child(6) td[align=right]::text").extract()[1:-3]
+        item['rating_table'] = rating_table
         return item

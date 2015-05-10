@@ -17,5 +17,5 @@ ITEM_PIPELINES = {
     'webmining.pipelines.MoviesPipeline': 100
 }
 
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 0.5
 HTTPCACHE_ENABLED = True
