@@ -19,7 +19,7 @@ angular.module('App').controller('movieCtrl', function($scope, movieService, $ro
 					$scope.chartConfig = {
 						options: {
 						  chart: {
-							  type: 'column',
+							  type: 'bar',
                 spacingRight: 20,
                 spacingLeft: 0,
                 spacingBottom:0,
