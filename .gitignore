@@ -1,7 +1,5 @@
 *.pyc
 .scrapy
 .DS_Store
-node_modules
-vendors
 .scrapy
 npm-debug.log
