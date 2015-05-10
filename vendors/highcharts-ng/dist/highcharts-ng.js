@@ -84,6 +84,17 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           title: {},
           subtitle: {},
           series: [],
+          xAxis: {
+              title: {
+                  text: 'Ratings'
+              },
+              categories: [10,9,8,7,6,5,4,3,2,1]
+          },
+          yAxis: {
+              title: {
+                  text: ''
+              }
+          },
           credits: {},
           plotOptions: {},
           navigator: { enabled: false }
