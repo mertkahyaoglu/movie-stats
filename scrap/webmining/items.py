@@ -7,6 +7,11 @@
 
 import scrapy
 
+class PosterItem(scrapy.Item):
+	imdbid = scrapy.Field()
+	image_urls = scrapy.Field()
+	images = scrapy.Field()
+
 class MovieItem(scrapy.Item):
 	imdbid = scrapy.Field()
 	title = scrapy.Field()

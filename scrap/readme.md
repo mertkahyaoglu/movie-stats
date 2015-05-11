@@ -10,4 +10,4 @@ IMDB Movie Data Scraping
 ### Run
 
 1. `scrapy crawl movies`
-2. output is movies.jl file
+2. output(movies.json) is an array of objects containing movies' data

@@ -15,7 +15,9 @@ NEWSPIDER_MODULE = 'webmining.spiders'
 
 ITEM_PIPELINES = {
     'webmining.pipelines.MoviesPipeline': 100
+    #'webmining.pipelines.ImagesPipeline': 200,
 }
 
+#IMAGES_STORE = '/Users/mert/Downloads/posters'
 DOWNLOAD_DELAY = 0.5
 HTTPCACHE_ENABLED = True
