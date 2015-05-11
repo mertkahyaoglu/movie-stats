@@ -18,7 +18,7 @@
   <tbody>
     <tr data-ng-repeat="movie in movies | filter:search | orderBy:'place'">
         <td>
-          <a href="#/movie/{{movie.imdbid}}"><img width="38px" height="56px" src="{{movie.poster}}"/></a>
+          <a href="#/movie/{{movie.imdbid}}"><img width="38px" height="56px" src="data/posters/{{movie.imdbid}}.jpg"/></a>
         </td>
         <td><a style="color:#00acc1" href="#/movie/{{movie.imdbid}}">{{movie.place}}. {{movie.title}}</a></td>
         <td>{{movie.year}}</td>
