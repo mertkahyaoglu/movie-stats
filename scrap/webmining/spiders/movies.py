@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import re
 from scrapy.selector import Selector
 from scrapy import Request
 from .. import items
+
 
 class MoviesSpider(scrapy.Spider):
     name = "movies"
@@ -30,7 +32,7 @@ class MoviesSpider(scrapy.Spider):
         item['cast'] = response.css("table.cast_list tr td[itemprop=actor] a span::text").extract()
         item['poster'] = response.css("div.image img[itemprop=image]::attr(src)").extract()[0]
         item['plot'] = response.css("p[itemprop=description]::text").extract()[0]
-
+        item['runtime'] = re.findall(r'\b\d+\b',response.css("time[itemprop=duration]::text").extract()[0])[0]
         rating = response.css(".star-box-details a::attr(href)").extract()[0]
         rating_url = "http://www.imdb.com/title/" + item['imdbid'] + "/" + rating
         yield Request(rating_url, self.parse_ratings, meta={'item': item})

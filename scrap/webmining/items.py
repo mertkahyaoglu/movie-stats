@@ -23,4 +23,5 @@ class MovieItem(scrapy.Item):
 	cast = scrapy.Field()
 	poster = scrapy.Field()
 	plot = scrapy.Field()
+	runtime = scrapy.Field()
 	rating_table = scrapy.Field()

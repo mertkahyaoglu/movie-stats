@@ -20,4 +20,3 @@ ITEM_PIPELINES = {
 
 #IMAGES_STORE = '/Users/mert/Downloads/posters'
 DOWNLOAD_DELAY = 0.5
-HTTPCACHE_ENABLED = True
