@@ -1,6 +1,5 @@
-angular.module('App').controller("listCtrl", function ($scope, movieService) {
-	var promise = movieService.getMovies();
-	promise.then(function (data) {
-		$scope.movies = data.data;
+angular.module('App').controller("listCtrl", function ($scope, $http) {
+	$http.get('data/movies.json').success(function(data) {
+		$scope.movies = data;
 	});
 })

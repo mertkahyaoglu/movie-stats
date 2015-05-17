@@ -1,8 +1,7 @@
-angular.module('App').controller('movieCtrl', function($scope, movieService, $routeParams) {
+angular.module('App').controller('movieCtrl', function($scope, $http, $routeParams) {
     var movieId = $routeParams.movieId;
-		var promise = movieService.getMovies();
-		promise.then(function (data) {
-			var movies = data.data;
+    $http.get('data/movies.json').success(function(data) {
+			var movies = data;
 			movies.forEach(function(movie) {
 				if(movie['imdbid'] == movieId) {
 					$scope.movie = movie;
@@ -54,7 +53,8 @@ angular.module('App').controller('movieCtrl', function($scope, movieService, $ro
 			});
 
       $scope.showDirectorStats = function(director) {
-
+        var data;
+        $scope.chartConfig.series = data;
       };
 
 		});

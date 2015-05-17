@@ -11,9 +11,13 @@ app.config(['$routeProvider',
 	        templateUrl: 'views/movie.html',
 	        controller: 'movieCtrl'
 	      }).
-        when('/about', {
-	        templateUrl: 'views/about.html',
-	        controller: 'aboutCtrl'
+        when('/directors', {
+	        templateUrl: 'views/directors.html',
+	        controller: 'directorsCtrl'
+	      }).
+        when('/actors', {
+	        templateUrl: 'views/actors.html',
+	        controller: 'actorsCtrl'
 	      }).
 	      otherwise({
 	        redirectTo: '/'

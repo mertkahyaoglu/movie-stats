@@ -14,10 +14,15 @@
           <a href="#/" class="brand-logo">Movie Stats</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#/about">About</a></li>
+            <li><a href="#/directors">Directors</a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#/actors">Actors</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li><a href="mobile.html">About</a></li>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/actors">Actors</a></li>
+            <li><a href="#/directors">Directors</a></li>
           </ul>
         </div>
       </div>
@@ -34,10 +39,10 @@
     <script src="http://code.highcharts.com/highcharts.src.js"></script>
     <script src="vendors/highcharts-ng/dist/highcharts-ng.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/services/actorService.js"></script>
-    <script src="scripts/services/movieService.js"></script>
     <script src="scripts/controllers/listCtrl.js"></script>
     <script src="scripts/controllers/movieCtrl.js"></script>
+    <script src="scripts/controllers/actorsCtrl.js"></script>
+    <script src="scripts/controllers/directorsCtrl.js"></script>
     <script></script>
     <script>
       $(".button-collapse").sideNav();

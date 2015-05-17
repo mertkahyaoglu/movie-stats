@@ -79,6 +79,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       };
     var getMergedOptions = function (scope, element, config) {
       var mergedOptions = {};
+      console.log(config.options)
       var defaultOptions = {
           chart: { events: {}, type:'bar' },
           title: {},
@@ -86,14 +87,15 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           series: [],
           xAxis: {
               title: {
-                  text: 'Ratings'
+                  text: ''
               },
-              categories: [10,9,8,7,6,5,4,3,2,1]
+              categories: []
           },
           yAxis: {
               title: {
                   text: ''
-              }
+              },
+              categories: []
           },
           credits: {},
           plotOptions: {},
