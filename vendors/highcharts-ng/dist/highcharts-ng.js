@@ -79,9 +79,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       };
     var getMergedOptions = function (scope, element, config) {
       var mergedOptions = {};
-      console.log(config.options)
       var defaultOptions = {
-          chart: { events: {}, type:'bar' },
+          chart: { events: {}},
           title: {},
           subtitle: {},
           series: [],

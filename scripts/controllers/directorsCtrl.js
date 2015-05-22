@@ -2,41 +2,55 @@ angular.module('App').controller('directorsCtrl', function($scope, $http) {
 
 	$http.get('data/directors-count.json').success(function(data) {
 			var counts = data;
-      var directors = Object.keys(counts);
-      var stats = []
-      for (key in counts) stats.push(counts[key]);
+			var stats = []
+			for(var key in counts) {
+				if(counts[key] > 7) {
+					stats.push({
+              name: key,
+              y: counts[key],
+              sliced: true,
+              selected: true
+          })
+					continue
+				}
+				var kv = []
+				kv.push(key);
+				kv.push(counts[key]);
+				stats.push(kv);
+			}
 
 			$scope.directorsChartConfig = {
 				options: {
 				  chart: {
-					  type: 'bar',
-            spacingRight: 20,
-            spacingLeft: 0,
-            spacingBottom:0,
-            zoomType: 'xy'
+						plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
 				  }
 				},
+				plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    },
+                    connectorColor: 'silver'
+                }
+            }
+        },
 				title: {
 				    text: 'Director Counts in Top 250'
 				},
 				credits: {
 				    enabled: false
 				},
-        xAxis: {
-            title: {
-                text: 'Directors'
-            },
-            categories: directors
-        },
-        yAxis: {
-            title: {
-                text: 'Count'
-            }
-        },
 				series: [{
+						type: 'pie',
 				    name: 'Number of movies',
-				    data: stats,
-            color: '#00bfa5'
+				    data: stats
 				}]
 			}
 

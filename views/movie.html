@@ -8,7 +8,9 @@
         <span style="color:#039be5" class="card-title activator grey-text text-darken-4">{{movie.title}}<i class="mdi-navigation-more-vert right"></i></span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{movie.title}} ({{movie.year}})<i class="mdi-navigation-close right"></i></span>
+        <span class="card-title grey-text text-darken-4">{{movie.title}} ({{movie.year}})</span>
+        <i class="mdi-navigation-close right"></i>
+        </span>
         <p>
           <span style="color:#03a9f4">Genres: </span>
           <span data-ng-repeat="genre in movie.genres">
@@ -16,7 +18,10 @@
           </span>
         </p>
         <p><span style="color:#03a9f4">Plot: </span>{{movie.plot}}</p>
-        <p><span ng-click="showDirectorStats()" style="color:#03a9f4">Director: </span>{{movie.director}}</p>
+        <p>
+          <span style="color:#03a9f4">Director: </span>
+          <span style="color:#ef7b47;cursor:pointer" href="#" ng-click="showDirectorStats()">{{movie.director}}</span>
+        </p>
         <p>
           <span style="color:#03a9f4">Stars: </span>
           <span data-ng-repeat="person in movie.cast">
@@ -29,6 +34,10 @@
         </span>,
         <span style="color:#03a9f4">Rating: </span>
         <span style="color:#f57f17">{{movie.rating}}</span>
+        </p>
+        <p>
+          <span style="color:#03a9f4">Runtime: </span>
+          <span>{{movie.runtime}} minutes</span>
         </p>
       </div>
     </div>

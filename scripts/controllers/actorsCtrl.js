@@ -2,18 +2,29 @@ angular.module('App').controller('actorsCtrl', function($scope, $http) {
 
 		$http.get('data/actors-count.json').success(function(data) {
 				var counts = data;
-				var actors = Object.keys(counts);
-		    var stats = []
-		    for (key in counts) stats.push(counts[key]);
+				var stats = []
+				for(var key in counts) {
+					if(counts[key] > 7) {
+						stats.push({
+								name: key,
+								y: counts[key],
+								sliced: true,
+								selected: true
+						})
+						continue
+					}
+					var kv = []
+					kv.push(key);
+					kv.push(counts[key]);
+					stats.push(kv);
+				}
 
 				$scope.actorsChartConfig = {
 					options: {
 					  chart: {
-						  type: 'bar',
-		          spacingRight: 20,
-		          spacingLeft: 0,
-		          spacingBottom:0,
-		          zoomType: 'xy'
+							plotBackgroundColor: null,
+	            plotBorderWidth: null,
+	            plotShadow: false
 					  }
 					},
 					title: {
@@ -22,21 +33,24 @@ angular.module('App').controller('actorsCtrl', function($scope, $http) {
 					credits: {
 					    enabled: false
 					},
-		      xAxis: {
-		          title: {
-		              text: 'Actors'
-		          },
-		          categories: actors
-		      },
-		      yAxis: {
-		          title: {
-		              text: 'Count'
-		          }
-		      },
+					plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: true,
+	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+	                    style: {
+	                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+	                    },
+	                    connectorColor: 'silver'
+	                }
+	            }
+	        },
 					series: [{
+							type: "pie",
 					    name: 'Number of movies',
-					    data: stats,
-		          color: '#00bfa5'
+					    data: stats
 					}]
 				}
 
