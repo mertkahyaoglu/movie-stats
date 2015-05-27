@@ -19,6 +19,10 @@ app.config(['$routeProvider',
 	        templateUrl: 'views/actors.html',
 	        controller: 'actorsCtrl'
 	      }).
+        when('/years', {
+	        templateUrl: 'views/years.html',
+	        controller: 'yearsCtrl'
+	      }).
 	      otherwise({
 	        redirectTo: '/'
 	      });

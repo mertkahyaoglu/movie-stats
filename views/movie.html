@@ -5,10 +5,10 @@
         <img class="activator poster" src="data/posters/{{movie.imdbid}}.jpg">
       </div>
       <div class="card-content">
-        <span style="color:#039be5" class="card-title activator grey-text text-darken-4">{{movie.title}}<i class="mdi-navigation-more-vert right"></i></span>
+        <span style="color:#039be5" class="card-title activator grey-text text-darken-4">{{movie.title}} {{movie.year}}<i class="mdi-navigation-more-vert right"></i></span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{movie.title}} ({{movie.year}})</span>
+        <span class="card-title grey-text text-darken-4">{{movie.title}}</span>
         <i class="mdi-navigation-close right"></i>
         </span>
         <p>
@@ -20,7 +20,7 @@
         <p><span style="color:#03a9f4">Plot: </span>{{movie.plot}}</p>
         <p>
           <span style="color:#03a9f4">Director: </span>
-          <span style="color:#ef7b47;cursor:pointer" href="#" ng-click="showDirectorStats()">{{movie.director}}</span>
+          <span style="color:#ef7b47;cursor:pointer;text-decoration:underline" href="#" ng-click="showDirectorStats()">{{movie.director}}</span>
         </p>
         <p>
           <span style="color:#03a9f4">Stars: </span>

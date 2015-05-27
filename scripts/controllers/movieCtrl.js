@@ -82,6 +82,7 @@ angular.module('App').controller('movieCtrl', function($scope, $http, $routePara
                 $scope.chartConfig.xAxis.categories = Object.keys(actors_count);
                 $scope.chartConfig.title.text = "Director's Most Selected Actors"
                 $scope.chartConfig.series[0].data = counts
+                $scope.chartConfig.series[0].name = "Count"
             });
           };
 
