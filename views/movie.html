@@ -5,12 +5,15 @@
         <img class="activator poster" src="data/posters/{{movie.imdbid}}.jpg">
       </div>
       <div class="card-content">
-        <span style="color:#039be5" class="card-title activator grey-text text-darken-4">{{movie.title}} {{movie.year}}<i class="mdi-navigation-more-vert right"></i></span>
+        <span style="color:#039be5" class="card-title activator grey-text text-darken-4">{{movie.title}}<i class="mdi-navigation-more-vert right"></i></span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{movie.title}}</span>
-        <i class="mdi-navigation-close right"></i>
+        <span class="card-title grey-text text-darken-4">{{movie.title}}<i class="mdi-navigation-close right"></i></span>
         </span>
+        <p>
+          <span style="color:#03a9f4">Year: </span>
+          <span>{{movie.year}}</span>
+        </p>
         <p>
           <span style="color:#03a9f4">Genres: </span>
           <span data-ng-repeat="genre in movie.genres">
@@ -25,7 +28,10 @@
         <p>
           <span style="color:#03a9f4">Stars: </span>
           <span data-ng-repeat="person in movie.cast">
-            {{person}}{{$last ? '' : ($index==movie.cast.length-2) ? ', and ' : ',&nbsp;'}}
+            <span style="color:#ef7b47;cursor:pointer;text-decoration:underline" href="#" ng-click="showActorStats(person)">
+              {{person}}
+            </span>
+            {{$last ? '' : ($index==movie.cast.length-2) ? ', and ' : ',&nbsp;'}}
           </span>
         </p>
         <p>

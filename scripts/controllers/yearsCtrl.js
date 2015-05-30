@@ -24,16 +24,17 @@ angular.module('App').controller('yearsCtrl', function($scope, $http) {
 					    text: 'Most Successful Years'
 					},
 					xAxis: {
+							allowDecimals: false,
 							title: {
 									text: 'Years'
 							},
 							categories: Object.keys(counts)
 					},
 					yAxis: {
+							allowDecimals: false,
 							title: {
 									text: 'Counts'
 							},
-							ceiling: 10
 					},
 					credits: {
 					    enabled: false
