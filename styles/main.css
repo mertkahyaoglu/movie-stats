@@ -4,3 +4,25 @@
 .brand-logo {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
+.build {
+  margin: 0;
+  margin-top: 5px;
+  padding-left: 20px
+}
+
+.build li{
+  list-style: circle;
+}
+
+.pageup {
+	position: fixed;
+	right: 80px;
+	bottom: 60px;
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/up.png);
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	display: none;
+	cursor: pointer;
+}

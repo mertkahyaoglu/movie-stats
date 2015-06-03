@@ -17,12 +17,14 @@
             <li><a href="#/actors">Actors</a></li>
             <li><a href="#/directors">Directors</a></li>
             <li><a href="#/years">Years</a></li>
+            <li><a href="#/about">About</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a href="#/">Home</a></li>
             <li><a href="#/actors">Actors</a></li>
             <li><a href="#/directors">Directors</a></li>
             <li><a href="#/years">Years</a></li>
+            <li><a href="#/about">About</a></li>
           </ul>
         </div>
       </div>
@@ -32,6 +34,7 @@
       <div ng-view></div>
     </div>
 
+    <div class="pageup"></div>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/angular/angular.js"></script>
     <script src="vendors/angular-route/angular-route.js"></script>
@@ -44,9 +47,10 @@
     <script src="scripts/controllers/actorsCtrl.js"></script>
     <script src="scripts/controllers/directorsCtrl.js"></script>
     <script src="scripts/controllers/yearsCtrl.js"></script>
-    <script></script>
+    <script src="vendors/jquery/jquery.pageup.js"></script>
     <script>
       $(".button-collapse").sideNav();
+      $(".pageup").pageup();
     </script>
   </body>
 </html>
