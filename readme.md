@@ -1,4 +1,4 @@
-[Movie Stats](http://mertkahyaoglu.github.io/web-mining) - Web Mining Course Project
+[Movie Stats](http://mert-kahyaoglu.com/movie-stats) - Web Mining Course Project
 =======================
 
 > The project scraps Top 250 movies' data from imdb.com and shows statistics about them using charts.
